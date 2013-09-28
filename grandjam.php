@@ -22,5 +22,3 @@ class Grandjam {
 	}
 }
 add_action( 'init', array( 'Grandjam', 'grandjam_init' ) );
-
-Grandjam::group_members();
