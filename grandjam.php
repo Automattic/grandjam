@@ -7,7 +7,7 @@
 
 class Grandjam {
 	function embed_simplenote( $matches, $attr, $url, $rawattr ) {
-		$embed = sprintf( '<iframe src="https://app.simplenote.com/publish/%s" width="600"></iframe>', $matches[1] );
+		$embed = sprintf( '<div class="embed-simplenote" data-id="%s"></div>', esc_attr( $matches[1] ) );
 		return apply_filters( 'embed_simplenote', $embed, $matches, $attr, $url, $rawattr );
 	}
 

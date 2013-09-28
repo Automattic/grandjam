@@ -3,9 +3,10 @@
         var $targets;
         $targets = $( '.embed-simplenote' );
         $targets.each( function() {
-			var $el;
+			var $el, noteId;
 			$el = $( this );
-			$el.html( 'hello world' ); 
+            noteId = $el.data( 'id' );
+            console.log( noteId );
 			
         } );
         
