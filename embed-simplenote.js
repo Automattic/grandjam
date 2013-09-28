@@ -1,5 +1,13 @@
 (function ($) {
     $(document).ready(function () {
-        $("div .embed-simplenote");
+        var $targets;
+        $targets = $( '.embed-simplenote' );
+        $targets.each( function() {
+			var $el;
+			$el = $( this );
+			$el.html( 'hello world' ); 
+			
+        } );
+        
     });
 })(jQuery);
