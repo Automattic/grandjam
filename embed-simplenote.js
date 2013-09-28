@@ -2,7 +2,7 @@
 	var getSimplenoteJSON;
 
 	getSimplenoteJSON = function ( slug ) {
-		return $.get( 'https://app.simplenote.com/publish/note/' + encodeURIComponent( slug ) ).promise();
+		return $.getJSON( 'https://app.simplenote.com/publish/note/' + encodeURIComponent( slug ) ).promise();
 	};
 
 	$(document).ready(function () {
