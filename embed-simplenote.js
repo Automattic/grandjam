@@ -1,4 +1,10 @@
 (function ($) {
+    var getSimplenoteJSON;
+
+    getSimplenoteJSON = function ( slug ) {
+        return $.get( 'https://app.simplenote.com/publish/note/' + encodeURIComponent( slug ) ).promise();
+    };
+
     $(document).ready(function () {
         var $targets;
         $targets = $( '.embed-simplenote' );
@@ -6,9 +12,9 @@
 			var $el, noteId;
 			$el = $( this );
             noteId = $el.data( 'id' );
-            console.log( noteId );
-			
+            getSimplenoteJSON( noteId ).done( function( json ) {
+                $el.html( json.content );
+            } );
         } );
-        
     });
 })(jQuery);
