@@ -13,7 +13,9 @@
 			$el = $( this );
 			noteId = $el.data( 'id' );
 			getSimplenoteJSON( noteId ).done( function( json ) {
-				$el.html( json.content );
+				var content = json.content;
+				content = content.replace( /(\r\n|\n|\r)/g, '<br />' );
+				$el.html( content );
 			} );
 		} );
 	});
