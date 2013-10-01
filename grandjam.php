@@ -6,6 +6,8 @@
  */
 
 class Grandjam {
+	const CACHE_BUSTER = '20131001';
+
 	function embed_simplenote( $matches, $attr, $url, $rawattr ) {
 		if ( !isset( $matches[2] ) ) {
 			return $url;
@@ -26,7 +28,7 @@ class Grandjam {
 	}
 
 	function enqueue_js_css() {
-		wp_enqueue_script( 'grandjam-embed-simplenote', plugins_url( 'embed-simplenote.js', __FILE__ ), array( 'jquery' ), '20130927a', true );
+		wp_enqueue_script( 'grandjam-embed-simplenote', plugins_url( 'embed-simplenote.js', __FILE__ ), array( 'jquery' ), self::CACHE_BUSTER, true );
 
 	}
 }
