@@ -13,8 +13,18 @@
 			$el = $( this );
 			noteId = $el.data( 'id' );
 			getSimplenoteJSON( noteId ).done( function( json ) {
-				var content = json.content;
-				content = content.replace( /(\r\n|\n|\r)/g, '<br />' );
+				var content, converter;
+
+				content = json.content;
+				if ( !content ) {
+					return;
+				}
+
+				if ( typeof Showdown !== 'undefined' ) {
+					converter = new Showdown.converter();
+					content = converter.makeHtml( content );
+				}
+
 				$el.html( content );
 			} );
 		} );

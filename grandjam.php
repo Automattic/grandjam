@@ -28,7 +28,8 @@ class Grandjam {
 	}
 
 	function enqueue_js_css() {
-		wp_enqueue_script( 'grandjam-embed-simplenote', plugins_url( 'embed-simplenote.js', __FILE__ ), array( 'jquery' ), self::CACHE_BUSTER, true );
+		wp_register_script( 'showdown', plugins_url( 'lib/showdown.js', __FILE__ ), array(), self::CACHE_BUSTER, true );
+		wp_enqueue_script( 'grandjam-embed-simplenote', plugins_url( 'embed-simplenote.js', __FILE__ ), array( 'jquery', 'showdown' ), self::CACHE_BUSTER, true );
 
 	}
 }
