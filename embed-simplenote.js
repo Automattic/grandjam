@@ -12,6 +12,9 @@
 			var $el, noteId;
 			$el = $( this );
 			noteId = $el.data( 'id' );
+			if ( !noteId ) {
+				return;
+			}
 			getSimplenoteJSON( noteId ).done( function( json ) {
 				var content, converter;
 
