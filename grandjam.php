@@ -18,7 +18,7 @@ class Grandjam {
 			return $url;
 		}
 		$embed = sprintf( '<div class="embed-simplenote" data-id="%s"></div>', $stub );
-		$embed .='<div class="embed-simplenote-footer"><a href='dkajldf'>Original Document</a></div>';		
+		$embed .='<div class="embed-simplenote-footer"><a href=ESC_URL( $URL )>Original Document</a></div>';		
 		return apply_filters( 'embed_simplenote', $embed, $matches, $attr, $url, $rawattr );
 	}
 
